@@ -5,8 +5,8 @@ services:
 before_install:
         - docker build -t parthsujalshah/react-test -f ./client/Dockerfile.dev ./client
 
-scripts:
-        docker run parthsujalshah/react-test npm test -- --coverage
+script:
+        - docker run parthsujalshah/react-test npm test -- --coverage
 
 after_success:
         - docker build -t parthsujalshah/multi-client ./client
